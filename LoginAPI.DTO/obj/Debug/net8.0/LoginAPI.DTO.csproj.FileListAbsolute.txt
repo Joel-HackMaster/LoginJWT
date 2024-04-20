@@ -1,0 +1,12 @@
+C:\ProyectosC#\API's\LoginJWT\LoginJWT\LoginAPI.DTO\bin\Debug\net8.0\LoginAPI.DTO.deps.json
+C:\ProyectosC#\API's\LoginJWT\LoginJWT\LoginAPI.DTO\bin\Debug\net8.0\LoginAPI.DTO.dll
+C:\ProyectosC#\API's\LoginJWT\LoginJWT\LoginAPI.DTO\bin\Debug\net8.0\LoginAPI.DTO.pdb
+C:\ProyectosC#\API's\LoginJWT\LoginJWT\LoginAPI.DTO\obj\Debug\net8.0\LoginAPI.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProyectosC#\API's\LoginJWT\LoginJWT\LoginAPI.DTO\obj\Debug\net8.0\LoginAPI.DTO.AssemblyInfoInputs.cache
+C:\ProyectosC#\API's\LoginJWT\LoginJWT\LoginAPI.DTO\obj\Debug\net8.0\LoginAPI.DTO.AssemblyInfo.cs
+C:\ProyectosC#\API's\LoginJWT\LoginJWT\LoginAPI.DTO\obj\Debug\net8.0\LoginAPI.DTO.csproj.CoreCompileInputs.cache
+C:\ProyectosC#\API's\LoginJWT\LoginJWT\LoginAPI.DTO\obj\Debug\net8.0\LoginAPI.DTO.sourcelink.json
+C:\ProyectosC#\API's\LoginJWT\LoginJWT\LoginAPI.DTO\obj\Debug\net8.0\LoginAPI.DTO.dll
+C:\ProyectosC#\API's\LoginJWT\LoginJWT\LoginAPI.DTO\obj\Debug\net8.0\refint\LoginAPI.DTO.dll
+C:\ProyectosC#\API's\LoginJWT\LoginJWT\LoginAPI.DTO\obj\Debug\net8.0\LoginAPI.DTO.pdb
+C:\ProyectosC#\API's\LoginJWT\LoginJWT\LoginAPI.DTO\obj\Debug\net8.0\ref\LoginAPI.DTO.dll
