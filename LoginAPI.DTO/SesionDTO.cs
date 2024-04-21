@@ -12,6 +12,6 @@ namespace LoginAPI.DTO
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string Email { get; set; }
-        public string Rol { get; set; }
+        public string NombreRol { get; set; }
     }
 }

@@ -13,8 +13,11 @@ namespace LoginAPI.DTO
         public string Apellidos { get; set; }
         public string Foto { get; set;}
         public string Pais { get; set;}
-        public string Rol { get; set;}
+        public string RolId { get; set;}
+        public string NombreRol { get; set;}
         public string Email { get; set;}
         public string Clave { get; set;}
+        public int Reestablecer { get; set; }
+        public int EsActivo { get; set; }
     }
 }

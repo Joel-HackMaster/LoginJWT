@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoginAPI.IOC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1628b1cac7af9dfb1d3b82a916e1b74c8c1254e5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7825b70ff4f47d81edc739e583c2e04932ad7120")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoginAPI.IOC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoginAPI.IOC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
