@@ -3,6 +3,38 @@
   "WorkspaceRootPath": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0B9ADA4C-6905-4122-B68C-82ED8CA8EA84}|LoginAPI.BLL\\LoginAPI.BLL.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi.bll\\servicios\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B9ADA4C-6905-4122-B68C-82ED8CA8EA84}|LoginAPI.BLL\\LoginAPI.BLL.csproj|solutionrelative:loginapi.bll\\servicios\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97B9C385-3A59-4AB4-9304-FEB3FA7DFE23}|LoginAPI.DAL\\LoginAPI.DAL.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi.dal\\loginapi.dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{97B9C385-3A59-4AB4-9304-FEB3FA7DFE23}|LoginAPI.DAL\\LoginAPI.DAL.csproj|solutionrelative:loginapi.dal\\loginapi.dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B9ADA4C-6905-4122-B68C-82ED8CA8EA84}|LoginAPI.BLL\\LoginAPI.BLL.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi.bll\\servicios\\contrato\\iusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B9ADA4C-6905-4122-B68C-82ED8CA8EA84}|LoginAPI.BLL\\LoginAPI.BLL.csproj|solutionrelative:loginapi.bll\\servicios\\contrato\\iusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{722B4E9C-CE0E-40AA-B52E-1CC871E7C7B8}|LoginAPI.DTO\\LoginAPI.DTO.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi.dto\\cambiarclavedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{722B4E9C-CE0E-40AA-B52E-1CC871E7C7B8}|LoginAPI.DTO\\LoginAPI.DTO.csproj|solutionrelative:loginapi.dto\\cambiarclavedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{722B4E9C-CE0E-40AA-B52E-1CC871E7C7B8}|LoginAPI.DTO\\LoginAPI.DTO.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi.dto\\sesiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{722B4E9C-CE0E-40AA-B52E-1CC871E7C7B8}|LoginAPI.DTO\\LoginAPI.DTO.csproj|solutionrelative:loginapi.dto\\sesiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC8B972E-A7E7-41D6-8CC3-66A25A86C99A}|LoginAPI.Utility\\LoginAPI.Utility.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi.utility\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC8B972E-A7E7-41D6-8CC3-66A25A86C99A}|LoginAPI.Utility\\LoginAPI.Utility.csproj|solutionrelative:loginapi.utility\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{722B4E9C-CE0E-40AA-B52E-1CC871E7C7B8}|LoginAPI.DTO\\LoginAPI.DTO.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi.dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{722B4E9C-CE0E-40AA-B52E-1CC871E7C7B8}|LoginAPI.DTO\\LoginAPI.DTO.csproj|solutionrelative:loginapi.dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ECA21F49-533A-4880-903B-E34C65142C6D}|LoginAPI.Model\\LoginAPI.Model.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi.model\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ECA21F49-533A-4880-903B-E34C65142C6D}|LoginAPI.Model\\LoginAPI.Model.csproj|solutionrelative:loginapi.model\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{97B9C385-3A59-4AB4-9304-FEB3FA7DFE23}|LoginAPI.DAL\\LoginAPI.DAL.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi.dal\\repositorios\\reestablecerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97B9C385-3A59-4AB4-9304-FEB3FA7DFE23}|LoginAPI.DAL\\LoginAPI.DAL.csproj|solutionrelative:loginapi.dal\\repositorios\\reestablecerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,22 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9F417BEA-A902-4DEA-B9AD-A0CCED180640}|LoginAPI.IOC\\LoginAPI.IOC.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi.ioc\\dependencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F417BEA-A902-4DEA-B9AD-A0CCED180640}|LoginAPI.IOC\\LoginAPI.IOC.csproj|solutionrelative:loginapi.ioc\\dependencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC8B972E-A7E7-41D6-8CC3-66A25A86C99A}|LoginAPI.Utility\\LoginAPI.Utility.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi.utility\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC8B972E-A7E7-41D6-8CC3-66A25A86C99A}|LoginAPI.Utility\\LoginAPI.Utility.csproj|solutionrelative:loginapi.utility\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ECA21F49-533A-4880-903B-E34C65142C6D}|LoginAPI.Model\\LoginAPI.Model.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi.model\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ECA21F49-533A-4880-903B-E34C65142C6D}|LoginAPI.Model\\LoginAPI.Model.csproj|solutionrelative:loginapi.model\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{722B4E9C-CE0E-40AA-B52E-1CC871E7C7B8}|LoginAPI.DTO\\LoginAPI.DTO.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi.dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{722B4E9C-CE0E-40AA-B52E-1CC871E7C7B8}|LoginAPI.DTO\\LoginAPI.DTO.csproj|solutionrelative:loginapi.dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{722B4E9C-CE0E-40AA-B52E-1CC871E7C7B8}|LoginAPI.DTO\\LoginAPI.DTO.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi.dto\\sesiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{722B4E9C-CE0E-40AA-B52E-1CC871E7C7B8}|LoginAPI.DTO\\LoginAPI.DTO.csproj|solutionrelative:loginapi.dto\\sesiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97B9C385-3A59-4AB4-9304-FEB3FA7DFE23}|LoginAPI.DAL\\LoginAPI.DAL.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi.dal\\repositorios\\contrato\\ireestablecerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,11 +86,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 170,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "LoginAPI.DAL",
+              "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DAL\\LoginAPI.DAL.csproj",
+              "RelativeDocumentMoniker": "LoginAPI.DAL\\LoginAPI.DAL.csproj",
+              "ToolTip": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DAL\\LoginAPI.DAL.csproj",
+              "RelativeToolTip": "LoginAPI.DAL\\LoginAPI.DAL.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-22T05:31:53.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CambiarCLaveDTO.cs",
+              "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DTO\\CambiarCLaveDTO.cs",
+              "RelativeDocumentMoniker": "LoginAPI.DTO\\CambiarCLaveDTO.cs",
+              "ToolTip": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DTO\\CambiarCLaveDTO.cs",
+              "RelativeToolTip": "LoginAPI.DTO\\CambiarCLaveDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T05:24:05.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.BLL\\Servicios\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "LoginAPI.BLL\\Servicios\\UsuarioService.cs",
+              "ToolTip": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.BLL\\Servicios\\UsuarioService.cs",
+              "RelativeToolTip": "LoginAPI.BLL\\Servicios\\UsuarioService.cs",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAkwHUAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T02:34:23.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IUsuarioService.cs",
+              "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.BLL\\Servicios\\Contrato\\IUsuarioService.cs",
+              "RelativeDocumentMoniker": "LoginAPI.BLL\\Servicios\\Contrato\\IUsuarioService.cs",
+              "ToolTip": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.BLL\\Servicios\\Contrato\\IUsuarioService.cs",
+              "RelativeToolTip": "LoginAPI.BLL\\Servicios\\Contrato\\IUsuarioService.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T02:29:27.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Dependencia.cs",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.IOC\\Dependencia.cs",
               "RelativeDocumentMoniker": "LoginAPI.IOC\\Dependencia.cs",
@@ -82,13 +150,12 @@
               "RelativeToolTip": "LoginAPI.IOC\\Dependencia.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T06:36:06.765Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-21T06:36:06.765Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoginAPI.Model",
+              "DocumentIndex": 11,
+              "Title": "LoginAPI.Model.csproj",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.Model\\LoginAPI.Model.csproj",
               "RelativeDocumentMoniker": "LoginAPI.Model\\LoginAPI.Model.csproj",
               "ToolTip": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.Model\\LoginAPI.Model.csproj",
@@ -100,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "DbLoginJwtContext.cs",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DAL\\DBContext\\DbLoginJwtContext.cs",
               "RelativeDocumentMoniker": "LoginAPI.DAL\\DBContext\\DbLoginJwtContext.cs",
@@ -108,25 +175,24 @@
               "RelativeToolTip": "LoginAPI.DAL\\DBContext\\DbLoginJwtContext.cs",
               "ViewState": "AQIAABIAAAAAAAAAAAAYwEYAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T06:04:45.028Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-21T06:04:45.028Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "ReestablecerRepository.cs",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DAL\\Repositorios\\ReestablecerRepository.cs",
               "RelativeDocumentMoniker": "LoginAPI.DAL\\Repositorios\\ReestablecerRepository.cs",
               "ToolTip": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DAL\\Repositorios\\ReestablecerRepository.cs",
               "RelativeToolTip": "LoginAPI.DAL\\Repositorios\\ReestablecerRepository.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAwwB0AAAAyAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAAswCEAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-21T05:47:37.741Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "GenericRepository.cs",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DAL\\Repositorios\\GenericRepository.cs",
               "RelativeDocumentMoniker": "LoginAPI.DAL\\Repositorios\\GenericRepository.cs",
@@ -134,12 +200,11 @@
               "RelativeToolTip": "LoginAPI.DAL\\Repositorios\\GenericRepository.cs",
               "ViewState": "AQIAAEUAAAAAAAAAAAAowBUAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T03:11:46.658Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-21T03:11:46.658Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "IReestablecerRepository.cs",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DAL\\Repositorios\\Contrato\\IReestablecerRepository.cs",
               "RelativeDocumentMoniker": "LoginAPI.DAL\\Repositorios\\Contrato\\IReestablecerRepository.cs",
@@ -147,12 +212,11 @@
               "RelativeToolTip": "LoginAPI.DAL\\Repositorios\\Contrato\\IReestablecerRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T03:08:07.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-21T03:08:07.827Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "IGenericRepository.cs",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DAL\\Repositorios\\Contrato\\IGenericRepository.cs",
               "RelativeDocumentMoniker": "LoginAPI.DAL\\Repositorios\\Contrato\\IGenericRepository.cs",
@@ -160,12 +224,11 @@
               "RelativeToolTip": "LoginAPI.DAL\\Repositorios\\Contrato\\IGenericRepository.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T02:54:53.602Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-21T02:54:53.602Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "RolDTO.cs",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DTO\\RolDTO.cs",
               "RelativeDocumentMoniker": "LoginAPI.DTO\\RolDTO.cs",
@@ -173,8 +236,7 @@
               "RelativeToolTip": "LoginAPI.DTO\\RolDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T01:44:42.027Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-21T01:44:42.027Z"
             },
             {
               "$type": "Document",
@@ -184,14 +246,14 @@
               "RelativeDocumentMoniker": "LoginAPI.Utility\\AutoMapperProfile.cs",
               "ToolTip": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.Utility\\AutoMapperProfile.cs",
               "RelativeToolTip": "LoginAPI.Utility\\AutoMapperProfile.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAowBwAAAA3AAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAowCwAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-21T01:38:17.111Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "Rol.cs",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.Model\\Rol.cs",
               "RelativeDocumentMoniker": "LoginAPI.Model\\Rol.cs",
@@ -199,12 +261,11 @@
               "RelativeToolTip": "LoginAPI.Model\\Rol.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T07:52:52.945Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-20T07:52:52.945Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "LoginAPI.DTO.csproj",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DTO\\LoginAPI.DTO.csproj",
               "RelativeDocumentMoniker": "LoginAPI.DTO\\LoginAPI.DTO.csproj",
@@ -217,20 +278,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "SesionDTO.cs",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DTO\\SesionDTO.cs",
               "RelativeDocumentMoniker": "LoginAPI.DTO\\SesionDTO.cs",
               "ToolTip": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DTO\\SesionDTO.cs",
               "RelativeToolTip": "LoginAPI.DTO\\SesionDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAZAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-20T07:40:05.972Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "LoginDTO.cs",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DTO\\LoginDTO.cs",
               "RelativeDocumentMoniker": "LoginAPI.DTO\\LoginDTO.cs",
@@ -238,31 +299,51 @@
               "RelativeToolTip": "LoginAPI.DTO\\LoginDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T07:39:55.78Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-20T07:39:55.78Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "UsuarioDTO.cs",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DTO\\UsuarioDTO.cs",
               "RelativeDocumentMoniker": "LoginAPI.DTO\\UsuarioDTO.cs",
               "ToolTip": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.DTO\\UsuarioDTO.cs",
               "RelativeToolTip": "LoginAPI.DTO\\UsuarioDTO.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwBMAAAAWAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABMAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-20T07:39:01.924Z",
               "EditorCaption": ""
-            },
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "78390565-af27-48ed-a96b-063a852fd669",
+        "Display": 0,
+        "X": 839,
+        "Y": 393,
+        "Width": 1588,
+        "Height": 661,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.Model\\Usuario.cs",
               "RelativeDocumentMoniker": "LoginAPI.Model\\Usuario.cs",
               "ToolTip": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.Model\\Usuario.cs",
               "RelativeToolTip": "LoginAPI.Model\\Usuario.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAA/wB0AAAAbAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-20T07:52:52.351Z",
               "EditorCaption": ""
