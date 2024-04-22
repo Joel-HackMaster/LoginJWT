@@ -4,6 +4,7 @@ using LoginAPI.DAL.Repositorios.Contrato;
 using LoginAPI.DTO;
 using LoginAPI.Model;
 using Microsoft.EntityFrameworkCore;
+using LoginAPI.Utility.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace LoginAPI.BLL.Servicios
         public UsuarioService(IGenericRepository<Usuario> usuarioRepositorio, IMapper mapper)
         {
             _usuarioRepositorio = usuarioRepositorio;
-            _mapper = mapper;
+            _mapper = mapper;  
         }
 
         public async Task<UsuarioDTO> BuscarPorID(int id)
@@ -42,7 +43,7 @@ namespace LoginAPI.BLL.Servicios
             try
             {
                 var usuarioEncontrado = await _usuarioRepositorio.Obtener(u => u.Email == modelo.Email && u.Clave == modelo.ClaveAntigua);
-                if (usuarioEncontrado == null) throw new TaskCanceledException("No se puedo cambiar la clave por que el usuario no existe");
+                if (usuarioEncontrado == null) throw new TaskCanceledException("La contraseña no es correcta");
                 usuarioEncontrado.Clave = modelo.ClaveNueva;
                 bool respuesta = await _usuarioRepositorio.Editar(usuarioEncontrado);
                 if (!respuesta) throw new TaskCanceledException("No se pudo cambiar la contraseña");
@@ -54,15 +55,15 @@ namespace LoginAPI.BLL.Servicios
             }
         }
 
-        public async Task<bool> CambiarEmail(String correo, SesionDTO sesion)
+        public async Task<bool> CambiarEmail(string correoNuevo, SesionDTO sesion)
         {
             try
             {
-                var usuarioEncontrado = await _usuarioRepositorio.Obtener(u => u.Email == correo);
-                if (usuarioEncontrado != null) throw new TaskCanceledException("Existe un usuario relacionado a ese correo por favor ingrese otro");
+                bool validarEmail = await ValidarCorreo(correoNuevo);
+                if (!validarEmail) throw new TaskCanceledException("Existe un usuario relacionado a este correo por favor ingrese otro");
                 var usuarioSesion = await _usuarioRepositorio.Obtener(u => u.Email == sesion.Email);
                 if (usuarioSesion == null) throw new TaskCanceledException("Ocurrio un error");
-                usuarioSesion.Email = correo;
+                usuarioSesion.Email = correoNuevo;
                 bool respuesta = await _usuarioRepositorio.Editar(usuarioSesion);
                 if (!respuesta) throw new TaskCanceledException("No se pudo cambiar el correo");
                 return respuesta;
@@ -79,7 +80,6 @@ namespace LoginAPI.BLL.Servicios
             {
                 var usuarioCreado = await _usuarioRepositorio.Crear(_mapper.Map<Usuario>(modelo));
                 if (usuarioCreado.IdUsuario == 0) throw new TaskCanceledException("No se pudo crear el usuario");
-
                 var query = await _usuarioRepositorio.Consultar(u => u.IdUsuario == usuarioCreado.IdUsuario);
                 usuarioCreado = query.Include(rol => rol.Rol).First();
 
@@ -121,7 +121,9 @@ namespace LoginAPI.BLL.Servicios
             {
                 var usuarioEncontrado = await _usuarioRepositorio.Obtener(u => u.IdUsuario == id);
                 if (usuarioEncontrado == null) throw new TaskCanceledException("El usuario no existe");
-                bool respuesta = await _usuarioRepositorio.Eliminar(usuarioEncontrado);
+                usuarioEncontrado.Activo = false;
+                usuarioEncontrado.RolId = 1;
+                bool respuesta = await _usuarioRepositorio.Editar(usuarioEncontrado);
                 if (!respuesta) throw new TaskCanceledException("No se pudo eliminar");
 
                 return respuesta;
@@ -146,9 +148,33 @@ namespace LoginAPI.BLL.Servicios
             }
         }
 
-        public Task<SesionDTO> ValidarCredenciales(string correo, string clave)
+        public async Task<bool> ValidarCorreo(string correo)
         {
-            throw new NotImplementedException();
+            bool validarCorreo = false;
+            var usuarioEncontrado = await _usuarioRepositorio.Obtener(u => u.Email == correo);
+            if(usuarioEncontrado == null) validarCorreo = true;
+
+            return validarCorreo;
+        }
+
+        public async Task<SesionDTO> ValidarCredenciales(string correo, string clave)
+        {
+            try
+            {
+                var queryUsuario = await _usuarioRepositorio.Consultar(u =>
+                    u.Email == correo &&
+                    u.Clave == clave
+                    );
+                if(queryUsuario.FirstOrDefault() == null) throw new TaskCanceledException("El usuario no existe");
+
+                Usuario devolverUsuario = queryUsuario.Include(rol => rol.Rol).First();
+
+                return _mapper.Map<SesionDTO>(devolverUsuario);
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }

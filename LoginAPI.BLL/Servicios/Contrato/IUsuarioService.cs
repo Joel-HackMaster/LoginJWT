@@ -15,7 +15,8 @@ namespace LoginAPI.BLL.Servicios.Contrato
         Task<bool> Editar(UsuarioDTO modelo);
         Task<bool> Eliminar(int id);
         Task<UsuarioDTO> BuscarPorID(int id);
-        Task<bool> CambiarEmail(SesionDTO modelo);
+        Task<bool> CambiarEmail(string correo, SesionDTO sesion);
         Task<bool> CambiarClave(CambiarCLaveDTO modelo);
+        Task<bool> ValidarCorreo(string correo);
     }
 }
