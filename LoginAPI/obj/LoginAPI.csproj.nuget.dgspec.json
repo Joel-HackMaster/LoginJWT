@@ -61,6 +61,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -480,6 +486,9 @@
               },
               "C:\\ProyectosC#\\API's\\LoginJWT\\LoginJWT\\LoginAPI.IOC\\LoginAPI.IOC.csproj": {
                 "projectPath": "C:\\ProyectosC#\\API's\\LoginJWT\\LoginJWT\\LoginAPI.IOC\\LoginAPI.IOC.csproj"
+              },
+              "C:\\ProyectosC#\\API's\\LoginJWT\\LoginJWT\\LoginAPI.Utility\\LoginAPI.Utility.csproj": {
+                "projectPath": "C:\\ProyectosC#\\API's\\LoginJWT\\LoginJWT\\LoginAPI.Utility\\LoginAPI.Utility.csproj"
               }
             }
           }
@@ -499,9 +508,21 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.5.1, )"
             }
           },
           "imports": [

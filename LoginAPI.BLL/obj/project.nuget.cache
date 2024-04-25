@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HVpTtESyBArtXjw6gSXP8PJ4pHAaMQLpig+9f95zqoBjbDI5fpeCZ5EC6bauOcW8NxS+j31zaBtmOfQKa7lBJA==",
+  "dgSpecHash": "fo28EEek07xz/ZrV/T0waJ29IhAYLW8tMxG7K3KrXAR5w0xRS5ekEW8ctfUNG1u4ptbauWZBuyziQfWLh5P2NA==",
   "success": true,
   "projectFilePath": "C:\\ProyectosC#\\API's\\LoginJWT\\LoginJWT\\LoginAPI.BLL\\LoginAPI.BLL.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "C:\\Users\\jwsb1.JOEL.000\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\jwsb1.JOEL.000\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.0\\microsoft.extensions.caching.memory.8.0.0.nupkg.sha512",
     "C:\\Users\\jwsb1.JOEL.000\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\jwsb1.JOEL.000\\.nuget\\packages\\microsoft.extensions.configuration.binder\\8.0.1\\microsoft.extensions.configuration.binder.8.0.1.nupkg.sha512",
     "C:\\Users\\jwsb1.JOEL.000\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\jwsb1.JOEL.000\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\jwsb1.JOEL.000\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0\\microsoft.extensions.logging.8.0.0.nupkg.sha512",

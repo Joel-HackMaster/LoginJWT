@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace LoginAPI.DTO
@@ -16,8 +17,11 @@ namespace LoginAPI.DTO
         public string RolId { get; set;}
         public string NombreRol { get; set;}
         public string Email { get; set;}
+        [JsonIgnore]
         public string Clave { get; set;}
+        [JsonIgnore]
         public int Reestablecer { get; set; }
+        [JsonIgnore]
         public int EsActivo { get; set; }
     }
 }

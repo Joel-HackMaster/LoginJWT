@@ -1,4 +1,9 @@
-﻿using LoginAPI.DAL.DBContext;
+﻿using LoginAPI.BLL.Servicios;
+using LoginAPI.BLL.Servicios.Contrato;
+using LoginAPI.DAL.DBContext;
+using LoginAPI.DAL.Repositorios;
+using LoginAPI.DAL.Repositorios.Contrato;
+using LoginAPI.Utility;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +22,13 @@ namespace LoginAPI.IOC
             service.AddDbContext<DbLoginJwtContext>(option => {
                 option.UseSqlServer(configuration.GetConnectionString("cadenaSQL"));
             });
+            service.AddTransient(typeof(IGenericRepository<>),typeof(GenericRepository<>));
+            service.AddScoped<IReestablecerRepository, ReestablecerRepository>();
+
+            service.AddAutoMapper(typeof(AutoMapperProfile));
+            service.AddScoped<IReestablecerService, ReestablecerService>();
+            service.AddScoped<IUsuarioService, UsuarioService>();
+            service.AddScoped<IAutorizacionService, AutorizacionService>();
         }
     }
 }

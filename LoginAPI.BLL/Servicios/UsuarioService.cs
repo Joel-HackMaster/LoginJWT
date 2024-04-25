@@ -42,7 +42,7 @@ namespace LoginAPI.BLL.Servicios
         {
             try
             {
-                var usuarioEncontrado = await _usuarioRepositorio.Obtener(u => u.Email == modelo.Email && u.Clave == modelo.ClaveAntigua);
+                var usuarioEncontrado = await _usuarioRepositorio.Obtener(u => u.Email == modelo.Email && u.Clave == Herramientas.ConvertSha256(modelo.ClaveAntigua));
                 if (usuarioEncontrado == null) throw new TaskCanceledException("La contraseña no es correcta");
                 usuarioEncontrado.Clave = modelo.ClaveNueva;
                 bool respuesta = await _usuarioRepositorio.Editar(usuarioEncontrado);

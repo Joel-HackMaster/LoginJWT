@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoginAPI.DTO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49f7a7d370bccfb7c6d633032f8d94723ac06438")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c762be462da54ee5a17343cd067797d0136a9f4")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoginAPI.DTO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoginAPI.DTO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
