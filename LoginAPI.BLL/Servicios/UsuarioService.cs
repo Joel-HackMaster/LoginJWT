@@ -156,25 +156,5 @@ namespace LoginAPI.BLL.Servicios
 
             return validarCorreo;
         }
-
-        public async Task<SesionDTO> ValidarCredenciales(string correo, string clave)
-        {
-            try
-            {
-                var queryUsuario = await _usuarioRepositorio.Consultar(u =>
-                    u.Email == correo &&
-                    u.Clave == clave
-                    );
-                if(queryUsuario.FirstOrDefault() == null) throw new TaskCanceledException("El usuario no existe");
-
-                Usuario devolverUsuario = queryUsuario.Include(rol => rol.Rol).First();
-
-                return _mapper.Map<SesionDTO>(devolverUsuario);
-            }
-            catch
-            {
-                throw;
-            }
-        }
     }
 }

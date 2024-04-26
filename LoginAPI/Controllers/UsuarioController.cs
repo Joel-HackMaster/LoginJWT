@@ -6,6 +6,8 @@ using LoginAPI.Utilidad;
 using LoginAPI.Model.Custom;
 using LoginAPI.BLL.Servicios;
 using Microsoft.AspNetCore.Authorization;
+using System.IdentityModel.Tokens.Jwt;
+using LoginAPI.DTO.Validacion;
 
 namespace LoginAPI.Controllers
 {
@@ -77,15 +79,67 @@ namespace LoginAPI.Controllers
         [Route("Autenticar")]
         public async Task<IActionResult> Autenticar([FromBody] AutorizacionRequest autorizacion)
         {
+            var rsp = new Response<AutorizacionResponse>();
             var resultado_autorizacion = await _autorizacionService.DevolverToken(autorizacion);
             if(resultado_autorizacion == null)
             {
                 return Unauthorized();
             }
-
-            return Ok(resultado_autorizacion);
+            rsp.value= resultado_autorizacion;
+            rsp.status=true;
+            rsp.msg = "Autorizado"; 
+            return Ok(rsp);
         }
 
+        [Authorize]
+        [HttpPost]
+        [Route("ObtenerRefreshToken")]
+        public async Task<IActionResult> ObtenerRefreshToken([FromBody] RefreshTokenRequest request)
+        {
+            var rsp = new Response<AutorizacionResponse>();
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var tokenExpiradoSupuesto = tokenHandler.ReadJwtToken(request.TokenExpirado);
+
+            if (tokenExpiradoSupuesto.ValidTo > DateTime.UtcNow) 
+            {
+                rsp.status=false;
+                rsp.value = new AutorizacionResponse { Resultado = false, Msg = "Token no ha expirado" };
+                rsp.msg = "El token aun esta activo";
+                return BadRequest(rsp); 
+            }
+
+            string idUsuario = tokenExpiradoSupuesto.Claims.First( x => 
+            x.Type == JwtRegisteredClaimNames.NameId).Value.ToString();
+
+            var autorizacionResponse = await _autorizacionService.DevolverRefreshToken(request, int.Parse(idUsuario));
+            rsp.status=autorizacionResponse.Resultado;
+            rsp.value = autorizacionResponse;
+            rsp.msg = autorizacionResponse.Msg;
+
+            if (rsp.status) return Ok(rsp);
+            else return BadRequest(rsp);
+        }
+
+
+        [HttpPost]
+        [Route("ValidarCorreo")]
+        public async Task<IActionResult> ValidarCorreo(string correo)
+        {
+            var rsp = new Response<ValidarEmail>();
+            ValidarEmail validarEmail = new ValidarEmail();
+            bool verificacion = await _usuarioService.ValidarCorreo(correo);
+            rsp.status = verificacion;
+
+            if (verificacion)
+            {
+                rsp.msg = "Verificado";
+                return Ok(rsp);
+            }
+
+            rsp.msg = "El correo esta en uso";
+
+            return Ok(rsp);
+        }
 
     }
 }

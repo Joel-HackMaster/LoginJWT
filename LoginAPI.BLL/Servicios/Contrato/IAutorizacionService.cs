@@ -10,5 +10,6 @@ namespace LoginAPI.BLL.Servicios.Contrato
     public interface IAutorizacionService
     {
         Task<AutorizacionResponse> DevolverToken(AutorizacionRequest autorizacion);
+        Task<AutorizacionResponse> DevolverRefreshToken(RefreshTokenRequest refreshTokenRequest, int IdUsuario);
     }
 }

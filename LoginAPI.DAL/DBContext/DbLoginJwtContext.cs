@@ -16,6 +16,8 @@ public partial class DbLoginJwtContext : DbContext
     {
     }
 
+    public virtual DbSet<HistorialRefreshToken> HistorialRefreshTokens { get; set; }
+
     public virtual DbSet<Rol> Rols { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
@@ -24,6 +26,27 @@ public partial class DbLoginJwtContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<HistorialRefreshToken>(entity =>
+        {
+            entity.HasKey(e => e.IdHistorial).HasName("PK__Historia__9CC7DBB4F9479B1B");
+
+            entity.ToTable("HistorialRefreshToken");
+
+            entity.Property(e => e.EsActivo).HasComputedColumnSql("(case when [FechaExpiracion]<getdate() then CONVERT([bit],(0)) else CONVERT([bit],(1)) end)", false);
+            entity.Property(e => e.FechaCreacion).HasColumnType("datetime");
+            entity.Property(e => e.FechaExpiracion).HasColumnType("datetime");
+            entity.Property(e => e.RefreshToken)
+                .HasMaxLength(500)
+                .IsUnicode(false);
+            entity.Property(e => e.Token)
+                .HasMaxLength(500)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.HistorialRefreshTokens)
+                .HasForeignKey(d => d.IdUsuario)
+                .HasConstraintName("FK__Historial__IdUsu__5CD6CB2B");
+        });
+
         modelBuilder.Entity<Rol>(entity =>
         {
             entity.HasKey(e => e.IdRol).HasName("PK__Rol__2A49584CAFE4890B");
