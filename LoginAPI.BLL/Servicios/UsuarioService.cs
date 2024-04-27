@@ -78,6 +78,10 @@ namespace LoginAPI.BLL.Servicios
         {
             try
             {
+                bool verificaCorreo = await ValidarCorreo(modelo.Email);
+                if (!verificaCorreo) throw new TaskCanceledException("El correo esta en uso prueba con otro");
+                modelo.Reestablecer = 1;
+                modelo.EsActivo = 1;
                 var usuarioCreado = await _usuarioRepositorio.Crear(_mapper.Map<Usuario>(modelo));
                 if (usuarioCreado.IdUsuario == 0) throw new TaskCanceledException("No se pudo crear el usuario");
                 var query = await _usuarioRepositorio.Consultar(u => u.IdUsuario == usuarioCreado.IdUsuario);
