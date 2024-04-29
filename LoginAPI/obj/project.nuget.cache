@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9sVAIslSdufLx2FwqmmL2JIvTC1ZOjWLPiypIV4WItvSNB1TJ50mA0vF4QqsC0ppLOiUT9119TKsaWSbcJ2klw==",
+  "dgSpecHash": "Ee+DpvYTMoO5iqL+5bxf7VdJZRB5r2D1lpn0u2E20aR4gyJUqnlS5EXKECIzBI0yw0sq2y9LuUZbiTUHuZFPXg==",
   "success": true,
   "projectFilePath": "C:\\ProyectosC#\\API's\\LoginJWT\\LoginJWT\\LoginAPI\\LoginAPI.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,7 @@
     "C:\\Users\\jwsb1.JOEL.000\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.5.1\\microsoft.identitymodel.tokens.7.5.1.nupkg.sha512",
     "C:\\Users\\jwsb1.JOEL.000\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\jwsb1.JOEL.000\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "C:\\Users\\jwsb1.JOEL.000\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\microsoft.visualstudio.azure.containers.tools.targets.1.19.6.nupkg.sha512",
     "C:\\Users\\jwsb1.JOEL.000\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\jwsb1.JOEL.000\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\jwsb1.JOEL.000\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",

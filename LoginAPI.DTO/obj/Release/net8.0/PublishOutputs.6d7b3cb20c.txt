@@ -1,0 +1,3 @@
+C:\ProyectosC#\API's\LoginJWT\LoginJWT\out\LoginAPI.DTO.dll
+C:\ProyectosC#\API's\LoginJWT\LoginJWT\out\LoginAPI.DTO.deps.json
+C:\ProyectosC#\API's\LoginJWT\LoginJWT\out\LoginAPI.DTO.pdb
