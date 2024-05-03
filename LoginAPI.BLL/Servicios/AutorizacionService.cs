@@ -13,6 +13,7 @@ using LoginAPI.DAL.DBContext;
 using LoginAPI.Utility.Tools;
 using System.Security.Cryptography;
 using LoginAPI.Model;
+using Azure.Core;
 
 namespace LoginAPI.BLL.Servicios
 {
@@ -105,16 +106,75 @@ namespace LoginAPI.BLL.Servicios
 
         public async Task<AutorizacionResponse> DevolverRefreshToken(RefreshTokenRequest refreshTokenRequest, int IdUsuario)
         {
-            var refreshTokenEncontrado = _context.HistorialRefreshTokens.FirstOrDefault(x => x.Token == refreshTokenRequest.TokenExpirado &&
-            x.RefreshToken == refreshTokenRequest.RefreshToken &&
+            var refreshTokenEncontrado = _context.HistorialRefreshTokens.FirstOrDefault(x => x.RefreshToken == refreshTokenRequest.RefreshToken &&
             x.IdUsuario == IdUsuario);
 
             if (refreshTokenEncontrado == null) return new AutorizacionResponse { Resultado = false, Msg = "No existe RefreshToken" };
 
-            var refreshTokenCreado = GenerarRefreshToken();
-            var tokenCreado = GenerarToken(IdUsuario.ToString());
+            if (refreshTokenEncontrado.EsActivo == true)
+            {
+                return await RestaurarTokens(refreshTokenEncontrado, refreshTokenRequest, IdUsuario);
+            }
 
-            return await GuardarHistorialRefreshToken(IdUsuario, tokenCreado, refreshTokenCreado);
+            return new AutorizacionResponse { Resultado = false, Msg = "La sesion caduco" };
+        }
+
+        public async Task<AutorizacionResponse> RestaurarTokens(HistorialRefreshToken refreshTokenEncontrado, RefreshTokenRequest refreshTokenRequest, int IdUsuario)
+        {
+            if ((refreshTokenEncontrado.FechaExpiracion - DateTime.UtcNow).TotalHours <= 1)
+            {
+                refreshTokenEncontrado.FechaExpiracion = DateTime.UtcNow.AddHours(2);
+            }
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var tokenExpiradoSupuesto = tokenHandler.ReadJwtToken(refreshTokenRequest.TokenExpirado);
+
+            if (tokenExpiradoSupuesto.ValidTo > DateTime.UtcNow)
+            {
+                return new AutorizacionResponse { Resultado = true, Msg = "El token aun esta Activo" };
+            }
+
+            refreshTokenEncontrado.Token = GenerarToken(IdUsuario.ToString());
+
+            _context.HistorialRefreshTokens.Update(refreshTokenEncontrado);
+            await _context.SaveChangesAsync();
+            return new AutorizacionResponse { Resultado = true, Token = refreshTokenEncontrado.Token, Msg = "El token se restauro" };
+        }
+
+
+
+        public async Task<AutorizacionResponse> CerrarSesion(RefreshTokenRequest refreshTokenRequest, int IdUsuario)
+        {
+            var refreshTokenEncontrado = _context.HistorialRefreshTokens.FirstOrDefault(x => x.IdUsuario == IdUsuario &&
+            x.RefreshToken == refreshTokenRequest.RefreshToken);
+
+            if (refreshTokenEncontrado != null)
+            {
+                refreshTokenEncontrado.FechaExpiracion = DateTime.UtcNow;
+                refreshTokenEncontrado.EsActivo = false;
+                _context.HistorialRefreshTokens.Update(refreshTokenEncontrado);
+
+                var tokenInvalido = new TokenListaNegra
+                {
+                    IdUsuario = IdUsuario,
+                    TokenInvalido = refreshTokenEncontrado.Token,
+                };
+                await _context.TokenListaNegra.AddAsync(tokenInvalido);
+                await _context.SaveChangesAsync();
+                return new AutorizacionResponse { Resultado = true, Msg = "Se cerro la sesion." };
+            }
+
+            return new AutorizacionResponse { Resultado = false, Msg = "Hubo un error y no se pudo cerrar sesion." };
+        }
+
+        public bool ValidarSesion(String token)
+        {
+            var tokenInvalido = _context.TokenListaNegra.FirstOrDefault(x => x.TokenInvalido == token);
+            if (tokenInvalido != null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

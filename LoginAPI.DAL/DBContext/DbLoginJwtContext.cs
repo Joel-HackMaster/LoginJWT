@@ -20,10 +20,11 @@ public partial class DbLoginJwtContext : DbContext
 
     public virtual DbSet<Rol> Rols { get; set; }
 
+    public virtual DbSet<TokenListaNegra> TokenListaNegra { get; set; }
+
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<HistorialRefreshToken>(entity =>
@@ -57,6 +58,21 @@ public partial class DbLoginJwtContext : DbContext
             entity.Property(e => e.NombreRol)
                 .HasMaxLength(100)
                 .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<TokenListaNegra>(entity =>
+        {
+            entity.HasKey(e => e.IdTokenLista).HasName("PK__TokenLis__370114F466E3CFFA");
+
+            entity.ToTable("TokenListaNegra");
+
+            entity.Property(e => e.TokenInvalido)
+                .HasMaxLength(500)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.TokenListaNegras)
+                .HasForeignKey(d => d.IdUsuario)
+                .HasConstraintName("FK__TokenList__IdUsu__6FE99F9F");
         });
 
         modelBuilder.Entity<Usuario>(entity =>

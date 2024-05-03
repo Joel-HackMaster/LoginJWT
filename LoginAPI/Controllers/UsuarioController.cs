@@ -41,11 +41,20 @@ namespace LoginAPI.Controllers
             return Ok(rsp);
         }
 
+        [Authorize]
         [HttpPost]
         [Route("CrearUsuario")]
         public async Task<IActionResult> CrearUsuario([FromBody] UsuarioDTO usuario)
         {
             var rsp = new Response<UsuarioDTO>();
+            string token = Request.Headers.Authorization;
+            if (_autorizacionService.ValidarSesion(token) == false)
+            {
+                rsp.status = false;
+                rsp.msg = "La sesion no esta activa";
+                return BadRequest(rsp);
+            }
+            
             string claveGenerada = Herramientas.GenerarClave();
             string asunto = "Creacion de Cuenta";
             string mensaje = "<h3>Su cuenta se creo correctamente</h3><br><p>Su contraseña para acceder es: !clave!</p>";
@@ -83,14 +92,15 @@ namespace LoginAPI.Controllers
             var resultado_autorizacion = await _autorizacionService.DevolverToken(autorizacion);
             if(resultado_autorizacion == null)
             {
-                return Unauthorized();
+                rsp.status = false;
+                return BadRequest(rsp);
             }
             rsp.value= resultado_autorizacion;
             rsp.status=true;
             rsp.msg = "Autorizado"; 
             return Ok(rsp);
         }
-
+        /*
         [Authorize]
         [HttpPost]
         [Route("ObtenerRefreshToken")]
@@ -119,7 +129,7 @@ namespace LoginAPI.Controllers
             if (rsp.status) return Ok(rsp);
             else return BadRequest(rsp);
         }
-
+        */
 
         [HttpPost]
         [Route("ValidarCorreo")]
@@ -141,5 +151,30 @@ namespace LoginAPI.Controllers
             return Ok(rsp);
         }
 
+        [Authorize]
+        [HttpPost]
+        [Route("CerrarSesion")]
+        public async Task<IActionResult> CerrarSesion([FromBody] RefreshTokenRequest request, int id)
+        {
+            var rsp = new Response<AutorizacionResponse>();
+            string token = Request.Headers.Authorization;
+            if (_autorizacionService.ValidarSesion(token) == false)
+            {
+                rsp.status = false;
+                rsp.msg = "La sesion no esta activa";
+                return BadRequest(rsp);
+            }
+
+            var auth = await  _autorizacionService.CerrarSesion(request, id);
+            if (auth.Resultado == false)
+            {
+                rsp.status = auth.Resultado;
+                rsp.msg = auth.Msg;
+                return BadRequest(rsp);
+            }
+            rsp.status = auth.Resultado;
+            rsp.msg = auth.Msg;
+            return Ok(rsp);
+        }
     }
 }

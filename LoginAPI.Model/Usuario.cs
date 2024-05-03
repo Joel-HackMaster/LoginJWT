@@ -30,4 +30,6 @@ public partial class Usuario
     public virtual ICollection<HistorialRefreshToken> HistorialRefreshTokens { get; set; } = new List<HistorialRefreshToken>();
 
     public virtual Rol Rol { get; set; }
+
+    public virtual ICollection<TokenListaNegra> TokenListaNegras { get; set; } = new List<TokenListaNegra>();
 }

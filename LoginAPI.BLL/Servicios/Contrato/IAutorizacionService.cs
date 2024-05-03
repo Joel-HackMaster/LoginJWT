@@ -11,5 +11,7 @@ namespace LoginAPI.BLL.Servicios.Contrato
     {
         Task<AutorizacionResponse> DevolverToken(AutorizacionRequest autorizacion);
         Task<AutorizacionResponse> DevolverRefreshToken(RefreshTokenRequest refreshTokenRequest, int IdUsuario);
+        Task<AutorizacionResponse> CerrarSesion(RefreshTokenRequest refreshTokenRequest, int IdUsuario);
+        bool ValidarSesion(String token);
     }
 }
