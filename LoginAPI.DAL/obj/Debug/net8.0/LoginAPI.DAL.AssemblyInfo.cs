@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoginAPI.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3ec09ac3299d86d0e39b0ab363dfd1b4d0da9b1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0bf8beb71a4012c9973aa4c15bdf1e0671559aa4")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoginAPI.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoginAPI.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

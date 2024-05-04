@@ -43,7 +43,7 @@ namespace LoginAPI.BLL.Servicios
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = claims,
-                Expires = DateTime.UtcNow.AddMinutes(10), //Tiempo universal
+                Expires = DateTime.UtcNow.AddMinutes(20), //Tiempo universal
                 SigningCredentials = credencialesToken
             };
 
@@ -107,9 +107,9 @@ namespace LoginAPI.BLL.Servicios
         public async Task<AutorizacionResponse> DevolverRefreshToken(RefreshTokenRequest refreshTokenRequest, int IdUsuario)
         {
             var refreshTokenEncontrado = _context.HistorialRefreshTokens.FirstOrDefault(x => x.RefreshToken == refreshTokenRequest.RefreshToken &&
-            x.IdUsuario == IdUsuario);
+            x.IdUsuario == IdUsuario && x.Token == refreshTokenRequest.TokenExpirado);
 
-            if (refreshTokenEncontrado == null) return new AutorizacionResponse { Resultado = false, Msg = "No existe RefreshToken" };
+            if (refreshTokenEncontrado == null || ValidarSesion(refreshTokenRequest.TokenExpirado) == false) return new AutorizacionResponse { Resultado = false, Msg = "No existe sesion o la sesion ya caduco" };
 
             if (refreshTokenEncontrado.EsActivo == true)
             {
@@ -124,18 +124,19 @@ namespace LoginAPI.BLL.Servicios
             if ((refreshTokenEncontrado.FechaExpiracion - DateTime.UtcNow).TotalHours <= 1)
             {
                 refreshTokenEncontrado.FechaExpiracion = DateTime.UtcNow.AddHours(2);
+                _context.HistorialRefreshTokens.Update(refreshTokenEncontrado);
+                await _context.SaveChangesAsync();
             }
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var tokenExpiradoSupuesto = tokenHandler.ReadJwtToken(refreshTokenRequest.TokenExpirado);
 
-            if (tokenExpiradoSupuesto.ValidTo > DateTime.UtcNow)
+            if ((tokenExpiradoSupuesto.ValidTo - DateTime.UtcNow).TotalMinutes >= 5)
             {
                 return new AutorizacionResponse { Resultado = true, Msg = "El token aun esta Activo" };
             }
 
             refreshTokenEncontrado.Token = GenerarToken(IdUsuario.ToString());
-
             _context.HistorialRefreshTokens.Update(refreshTokenEncontrado);
             await _context.SaveChangesAsync();
             return new AutorizacionResponse { Resultado = true, Token = refreshTokenEncontrado.Token, Msg = "El token se restauro" };

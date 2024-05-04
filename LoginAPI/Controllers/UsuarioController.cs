@@ -29,10 +29,29 @@ namespace LoginAPI.Controllers
         public async Task<IActionResult> Lista()
         {
             var rsp = new Response<List<UsuarioDTO>>();
+            var refresh = new RefreshTokenRequest();
+            refresh.TokenExpirado = Request.Headers["Authorization"];
+            if (refresh.TokenExpirado.StartsWith("Bearer "))
+            {
+                refresh.TokenExpirado = refresh.TokenExpirado.Substring(7); // Elimina los 7 caracteres de "Bearer "
+            }
+            refresh.RefreshToken = Request.Headers["Refresh-Token"];
+            string userId = Request.Headers["User-Id"];
+            var auth = await _autorizacionService.DevolverRefreshToken(refresh, int.Parse(userId));
+            if (auth == null || auth.Resultado == false)
+            {
+                rsp.status = false;
+                rsp.msg = "La sesion se cerro - "+auth.Msg;
+                return BadRequest(rsp);
+            }
+
             try
             {
+                rsp.msg = "Autorizado-"+auth.Msg;
                 rsp.status = true;
                 rsp.value = await _usuarioService.lista();
+                rsp.token = auth.Token;
+                rsp.refreshtoken = auth.RefreshToken;
             }catch (Exception ex)
             {
                 rsp.status=false;
@@ -47,14 +66,18 @@ namespace LoginAPI.Controllers
         public async Task<IActionResult> CrearUsuario([FromBody] UsuarioDTO usuario)
         {
             var rsp = new Response<UsuarioDTO>();
-            string token = Request.Headers.Authorization;
-            if (_autorizacionService.ValidarSesion(token) == false)
+            var refresh = new RefreshTokenRequest();
+            refresh.TokenExpirado = Request.Headers["Authorization"];
+            refresh.RefreshToken = Request.Headers["Refresh-Token"];
+            string userId = Request.Headers["User-Id"];
+            var auth = await _autorizacionService.DevolverRefreshToken(refresh, int.Parse(userId));
+            if (auth.Resultado == false)
             {
                 rsp.status = false;
-                rsp.msg = "La sesion no esta activa";
+                rsp.msg = "La sesion se cerro";
                 return BadRequest(rsp);
             }
-            
+
             string claveGenerada = Herramientas.GenerarClave();
             string asunto = "Creacion de Cuenta";
             string mensaje = "<h3>Su cuenta se creo correctamente</h3><br><p>Su contraseña para acceder es: !clave!</p>";
@@ -67,6 +90,9 @@ namespace LoginAPI.Controllers
                 try
                 {
                     rsp.status = true;
+                    rsp.msg = "Autorizado";
+                    rsp.token = auth.Token;
+                    rsp.refreshtoken = auth.RefreshToken;
                     rsp.value = await _usuarioService.Crear(usuario);
                 }
                 catch (Exception ex)
@@ -95,7 +121,8 @@ namespace LoginAPI.Controllers
                 rsp.status = false;
                 return BadRequest(rsp);
             }
-            rsp.value= resultado_autorizacion;
+            rsp.token= resultado_autorizacion.Token;
+            rsp.refreshtoken= resultado_autorizacion.RefreshToken;
             rsp.status=true;
             rsp.msg = "Autorizado"; 
             return Ok(rsp);
@@ -154,22 +181,26 @@ namespace LoginAPI.Controllers
         [Authorize]
         [HttpPost]
         [Route("CerrarSesion")]
-        public async Task<IActionResult> CerrarSesion([FromBody] RefreshTokenRequest request, int id)
+        public async Task<IActionResult> CerrarSesion()
         {
             var rsp = new Response<AutorizacionResponse>();
-            string token = Request.Headers.Authorization;
-            if (_autorizacionService.ValidarSesion(token) == false)
+            var refresh = new RefreshTokenRequest();
+            refresh.TokenExpirado = Request.Headers["Authorization"];
+            refresh.RefreshToken = Request.Headers["Refresh-Token"];
+            string userId = Request.Headers["User-Id"];
+            var auth = await _autorizacionService.DevolverRefreshToken(refresh, int.Parse(userId));
+            if (auth.Resultado == false)
             {
                 rsp.status = false;
-                rsp.msg = "La sesion no esta activa";
+                rsp.msg = "La sesion se cerro";
                 return BadRequest(rsp);
             }
 
-            var auth = await  _autorizacionService.CerrarSesion(request, id);
-            if (auth.Resultado == false)
+            var sesion = await  _autorizacionService.CerrarSesion(refresh, int.Parse(userId));
+            if (sesion.Resultado == false)
             {
-                rsp.status = auth.Resultado;
-                rsp.msg = auth.Msg;
+                rsp.status = sesion.Resultado;
+                rsp.msg = sesion.Msg;
                 return BadRequest(rsp);
             }
             rsp.status = auth.Resultado;
