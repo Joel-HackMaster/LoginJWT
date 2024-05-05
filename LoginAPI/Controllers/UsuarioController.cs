@@ -114,14 +114,16 @@ namespace LoginAPI.Controllers
         [Route("Autenticar")]
         public async Task<IActionResult> Autenticar([FromBody] AutorizacionRequest autorizacion)
         {
-            var rsp = new Response<AutorizacionResponse>();
+            var rsp = new Response<SesionDTO>();
             var resultado_autorizacion = await _autorizacionService.DevolverToken(autorizacion);
             if(resultado_autorizacion == null)
             {
                 rsp.status = false;
                 return BadRequest(rsp);
             }
+            var sesion = await _autorizacionService.DevolverSesion(autorizacion);
             rsp.token= resultado_autorizacion.Token;
+            rsp.value = sesion;
             rsp.refreshtoken= resultado_autorizacion.RefreshToken;
             rsp.status=true;
             rsp.msg = "Autorizado"; 

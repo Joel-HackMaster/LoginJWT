@@ -12,20 +12,28 @@ using LoginAPI.BLL.Servicios.Contrato;
 using LoginAPI.DAL.DBContext;
 using LoginAPI.Utility.Tools;
 using System.Security.Cryptography;
+using Microsoft.EntityFrameworkCore;
 using LoginAPI.Model;
 using Azure.Core;
+using LoginAPI.DTO;
+using AutoMapper;
+using LoginAPI.DAL.Repositorios.Contrato;
 
 namespace LoginAPI.BLL.Servicios
 {
     public class AutorizacionService : IAutorizacionService
     {
+        private readonly IMapper _mapper;
         private readonly DbLoginJwtContext _context;
         private readonly IConfiguration _configuration;
+        private readonly IGenericRepository<Usuario> _usuarioRepositorio;
 
-        public AutorizacionService(DbLoginJwtContext context, IConfiguration configuration)
+        public AutorizacionService(IGenericRepository<Usuario> usuarioRepositorio, DbLoginJwtContext context, IConfiguration configuration, IMapper mapper)
         {
+            _usuarioRepositorio = usuarioRepositorio;
             _context = context;
             _configuration = configuration;
+            _mapper = mapper;
         }
 
         private string GenerarToken(string idUsuario)
@@ -72,6 +80,14 @@ namespace LoginAPI.BLL.Servicios
 
             //return new AutorizacionResponse() { Token = tokenCreado, Resultado= true, Msg="Ok" };
             return await GuardarHistorialRefreshToken(usuario_encontrado.IdUsuario, tokenCreado, refreshTokenCreado);
+        }
+
+        public async Task<SesionDTO> DevolverSesion(AutorizacionRequest autorizacion)
+        {
+            var usuario = new Usuario();
+            var query = await _usuarioRepositorio.Consultar(u => u.Email == autorizacion.Correo && u.Clave == Herramientas.ConvertSha256(autorizacion.Clave));
+            usuario = query.Include(rol => rol.Rol).First();
+            return _mapper.Map<SesionDTO>(usuario); ;
         }
 
         private string GenerarRefreshToken()
