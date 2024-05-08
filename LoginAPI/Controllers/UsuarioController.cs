@@ -118,6 +118,7 @@ namespace LoginAPI.Controllers
             var resultado_autorizacion = await _autorizacionService.DevolverToken(autorizacion);
             if(resultado_autorizacion == null)
             {
+                rsp.msg = "No existe un usuario relacionado al correo";
                 rsp.status = false;
                 return BadRequest(rsp);
             }
