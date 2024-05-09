@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{387C2900-6A1B-4B72-8826-8BCF445376AD}|LoginAPI\\LoginAPI.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi\\dockerfile1.original||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{387C2900-6A1B-4B72-8826-8BCF445376AD}|LoginAPI\\LoginAPI.csproj|solutionrelative:loginapi\\dockerfile1.original||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{387C2900-6A1B-4B72-8826-8BCF445376AD}|LoginAPI\\LoginAPI.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{387C2900-6A1B-4B72-8826-8BCF445376AD}|LoginAPI\\LoginAPI.csproj|solutionrelative:loginapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{387C2900-6A1B-4B72-8826-8BCF445376AD}|LoginAPI\\LoginAPI.csproj|c:\\proyectosc#\\api\u0027s\\loginjwt\\loginjwt\\loginapi\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{387C2900-6A1B-4B72-8826-8BCF445376AD}|LoginAPI\\LoginAPI.csproj|solutionrelative:loginapi\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,11 +26,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 170,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dockerfile1.original",
+              "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI\\Dockerfile1.original",
+              "RelativeDocumentMoniker": "LoginAPI\\Dockerfile1.original",
+              "ToolTip": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI\\Dockerfile1.original",
+              "RelativeToolTip": "LoginAPI\\Dockerfile1.original",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-09T01:09:48.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI\\Dockerfile",
+              "RelativeDocumentMoniker": "LoginAPI\\Dockerfile",
+              "ToolTip": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI\\Dockerfile",
+              "RelativeToolTip": "LoginAPI\\Dockerfile",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-09T01:04:24.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AutorizacionService.cs",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI.BLL\\Servicios\\AutorizacionService.cs",
               "RelativeDocumentMoniker": "LoginAPI.BLL\\Servicios\\AutorizacionService.cs",
@@ -34,7 +68,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\ProyectosC#\\API\u0027s\\LoginJWT\\LoginJWT\\LoginAPI\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "LoginAPI\\Controllers\\UsuarioController.cs",
